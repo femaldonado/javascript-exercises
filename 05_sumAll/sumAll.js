@@ -1,19 +1,18 @@
-const sumAll = function (num1, num2) {
-  const error = "ERROR";
-  const finalSum = o;
-  const biggerValue = Math.max(num1, num2);
-  const smallerValue = math.min(num1, num2);
-  if (typeof num1 === "string" || typeof num2 === "string") {
-    return error;
-  } else if (typeof num1 === "object" || typeof num2 === "object") {
-    return error;
-  } else if (biggerValue >= 0 && smallerValue > +0) {
-    for (let i = smallerValue; i <= biggerValue; i++) {
-      finalSum = finalSum + i;
+
+  const sumAll = function(min, max) {
+    if (!Number.isInteger(min) || !Number.isInteger(max)) return "ERROR";
+    if (min < 0 || max < 0) return "ERROR";
+    if (min > max) {
+      const temp = min;
+      min = max;
+      max = temp;
     }
-  } else return error;
-  return finalSum;
-};
+    let sum = 0;
+    for (let i = min; i < max + 1; i++) {
+      sum += i;
+    }
+    return sum;
+  };
 
 // Do not edit below this line
 module.exports = sumAll;
